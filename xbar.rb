@@ -1,1 +1,1 @@
-# weather updates
+# weather updates right in your xbar!
