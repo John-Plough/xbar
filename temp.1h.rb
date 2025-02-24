@@ -17,21 +17,13 @@ temp = data['main']['temp'].round
 high = data['main']['temp_max'].round
 low = data['main']['temp_min'].round
 
-font_color = if temp < too_low
-               'blue'
-             elsif temp < too_high
-               'green'
-             else
-               'red'
-             end
-
-emo = if temp < too_low
-        '🥶'
-      elsif temp < too_high
-        '😀'
-      else
-        '🥵'
-      end
+font_color, emo = if temp < too_low
+  ['blue', '🥶']
+elsif temp < too_high
+  ['green', '😀']
+else
+  ['red', '🥵']
+end
 
 FONT = "color=#{font_color}"
 
