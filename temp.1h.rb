@@ -11,8 +11,8 @@ too_low = (ENV['COLD'] || 32).to_i
 too_high = (ENV['HOT'] || 72).to_i
 
 response = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=imperial")
-data = response.parse
 
+data = response.parse
 temp = data['main']['temp'].round
 high = data['main']['temp_max'].round
 low = data['main']['temp_min'].round
